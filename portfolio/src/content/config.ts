@@ -7,8 +7,8 @@ const proyects = defineCollection({
     date: z.string(),
     description: z.string(),
     teckstack: z.object({
-      one: z.string(),
-      two: z.string()
+      one: z.string().optional(),
+      two: z.string().optional()
     })
   })
 })
