@@ -3,29 +3,43 @@ import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-
-const books = await getCollection('proyects')
+// Obtenemos la coleccion de libros
+const proyects = await getCollection('proyects')
 ---
 
-<Layout title="Proyects">
-   <main class="grid gap-3.5 px-10">
-    <section>
-      <div class="bg-red-300 text-black p-20 rounded-2xl">
-        <h1 class="text-4xl font-bold">
+<Layout title="profile">
+   <main class="grid gap-3.5 px-10 pt-10">
+    <section title="about">
+      <div class="bg-blue-300 text-black p-20 rounded-2xl">
+        <h1 
+          class="text-4xl font-bold"
+        >
           Hi, my name is Mauricio
         </h1>
+        <h2
+        class="text-2xl"
+        >
+          I'am Web Development
+        </h2>
       </div>  
     </section>
 
-    <section>
+    <section title="proyects">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {books.map((book)=>{
-        const {data} =book
-        const {title,date,description} = data
+      {proyects.map((proyect)=>{
+        const {data} = proyect
+        const {title,date,description,teckstack} = data
         return (
-        <div class="border-2 p-10 rounded-2xl hover:scale-105 duration-105">
-          <h1>{title}</h1>
-          <spa>{date}</spa>
+        <div class="border-2 p-10 rounded-2xl">
+          <h1
+          class="font-bold text-xl">
+            {title}
+          </h1>
+          <p>{teckstack.one}, {teckstack.two}</p>
+          <spa
+            class="">
+            {date}
+          </spa>
           <p>{description}</p>
         </div>
         )

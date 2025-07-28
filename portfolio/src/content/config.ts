@@ -5,7 +5,11 @@ const proyects = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.string(),
-    description: z.string()
+    description: z.string(),
+    teckstack: z.object({
+      one: z.string(),
+      two: z.string()
+    })
   })
 })
 
