@@ -15,14 +15,14 @@ const proyects = await getCollection('proyects')
     <section title="dashboard">
       <div class="bg-blue-300 text-black p-20 rounded-2xl">
         <h1 
-          class="text-4xl font-bold"
+          class="text-4xl font-bold lg:text-5xl"
         >
-          Hi, my name is Mauricio
+          Hi, my name is Mauricio 🚀✨
         </h1>
         <h2
-        class="text-2xl"
+        class="text-2xl lg:text-3xl"
         >
-          I'am Web Development  
+          I'am Web Development 🧑‍💻 
         </h2>
       </div>  
     </section>
@@ -34,7 +34,7 @@ const proyects = await getCollection('proyects')
       <div
         class="border-2 rounded-2xl p-10">
         <h1 class="text-2xl font-bold"
-        >About me...
+        >👤 About me
         </h1>
         <p>I'am development and student of Systems Enginering.</p>
       </div>
@@ -54,14 +54,14 @@ const proyects = await getCollection('proyects')
           class="font-bold text-xl">
             {title}
           </h1>
-          <p>
+          <p class="text-lg">
             {teckstack.one}
             {teckstack.two?`, ${teckstack.two}`:""}</p>
           <spa
-            class="">
+            class="font-extralight">
             {date}
           </spa>
-          <p>{description}</p>
+          <p class="font-medium">{description}</p>
         </div>
         )
         })}
