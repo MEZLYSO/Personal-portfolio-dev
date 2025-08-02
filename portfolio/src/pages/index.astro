@@ -1,72 +1,16 @@
 ---
-import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
 
-// Obtenemos la coleccion de libros
-const proyects = await getCollection('proyects')
+//Components
+import Banner from '../sections/Banner/Banner.astro'
+import Proyects from '../sections/Proyects/Proyects.astro'
+import Aboutme from '../sections/Aboutme/Aboutme.astro'
 ---
 
-<Layout title="profile">
-  <main class="grid gap-3.5 px-10 pt-10">
-
-    <!-- Dashboard section  -->
-
-    <section title="dashboard">
-      <div class="bg-blue-300 text-black p-20 rounded-2xl">
-        <h1 
-          class="text-4xl font-bold lg:text-5xl"
-        >
-          Hi, my name is Mauricio 🚀✨
-        </h1>
-        <h2
-        class="text-2xl lg:text-3xl"
-        >
-          I'am Web Development 🧑‍💻 
-        </h2>
-      </div>  
-    </section>
-
-    <!-- Description section -->
-
-    <section title="about">
-
-      <div
-        class="border-2 rounded-2xl p-10">
-        <h1 class="text-2xl font-bold"
-        >👤 About me
-        </h1>
-        <p>I'am development and student of Systems Enginering.</p>
-      </div>
-
-    </section>
-
-    <!-- Proyects section -->
-
-    <section title="proyects">
-      <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      {proyects.map((proyect)=>{
-        const {data} = proyect
-        const {title,date,description,teckstack} = data
-        return (
-        <div class="border-2 p-10 rounded-2xl">
-          <h1
-          class="font-bold text-xl">
-            {title}
-          </h1>
-          <p class="text-lg">
-            {teckstack.one}
-            {teckstack.two?`, ${teckstack.two}`:""}</p>
-          <spa
-            class="font-extralight">
-            {date}
-          </spa>
-          <p class="font-medium">{description}</p>
-        </div>
-        )
-        })}
-      </div>
-    </section>
-
+<Layout>
+  <main class="flex-col space-y-5 py-10 lg:py-20 mx-10 sm:mx-20 lg:mx-30 xl:mx-50">
+    <Banner/>
+    <Proyects/>
+    <Aboutme />
   </main>
 </Layout>
