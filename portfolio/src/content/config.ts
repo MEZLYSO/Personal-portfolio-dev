@@ -3,7 +3,9 @@ import { defineCollection, z } from 'astro:content'
 const proyects = defineCollection({
   type: 'content',
   schema: z.object({
-    title: z.string()
+    title: z.string(),
+    repoURL: z.string(),
+    description: z.string()
   })
 })
 

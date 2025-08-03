@@ -1,46 +1,34 @@
 ---
 import TitleSection from '../../components/TitleSection.astro'
-import img from '../../assets/node.gif'
-import {Image} from 'astro:assets'
 
 import { getCollection } from 'astro:content';
 const proyects = await getCollection('proyects')
+import CardProyect from './components/CardProyect.astro'
 
 interface proyectItem {
   data:{
-    title:string
+    title:string,
+    repoURL:string,
+    description:string
   }
 }
 
 ---
 <div>
   <TitleSection text="📦Proyects"/> 
-  <div class="mt-5 grid grid-cols-2 text-white gap-3">
-    <div class="duration-125 hover:scale-105 border-2 border-white rounded p-2">
-      <Image 
-        class="max-h-50 w-auto"
-        src={img} 
-        alt=""/>
-      <h3
-        class="text-white font-bold text-xl">Astro Portfolio</h3>
-      <div class="grid grid-cols-2 w-full">
-       <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=for-the-badge"> 
-        <img src="https://img.shields.io/badge/Bun-000?logo=bun&logoColor=fff&style=for-the-badge" alt="Bun Badge">
-        <img src="https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=for-the-badge" alt="Astro Badge"> 
-      </div>
-      <p
-      class="font-extralight">Personal portfolio design in Astro</p>
-    </div>
-    <div>
+  <div class="mt-5 grid sm:grid-cols-2 text-white gap-5">    
       {
       proyects.map((item:proyectItem)=>{
-      const {data} = item
-      const {title}=data
-      return(
-      <p>{title}</p>
-      )
+        const {data} = item
+        const {title,repoURL,description}=data
+        return(
+        <CardProyect 
+          title={title}
+          repoURL={repoURL}
+          description={description}
+        />
+        )
       })
       }
-    </div>
   </div> 
 </div>
