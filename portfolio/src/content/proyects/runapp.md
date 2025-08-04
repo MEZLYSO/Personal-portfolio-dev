@@ -1,4 +1,5 @@
 ---
-title: "RunApp"
-description: "Proyect realized in React with NestJs"
+title: "RunApp Fronted"
+repoURL: "REACT_JS_PROYECT_"
+description: "App for running in Tesji using React"
 ---
