@@ -1,5 +1,7 @@
 # Personal-portfolio
 
+<img src="./banner/bannerImg.png">
+
 <a href="https://maurydev.vercel.app/">
   <img src="https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=fff&style=for-the-badge" alt="Vercel Badge">
 </a>
