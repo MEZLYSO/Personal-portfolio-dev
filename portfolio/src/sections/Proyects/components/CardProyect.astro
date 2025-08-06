@@ -28,8 +28,9 @@ const {title,img,description,repoURL,depoURL,gitIcon} = Astro.props
           class="size-5 m-1 bg-white p-1 rounded-4xl"
           width={gitIcon.width}
           height={gitIcon.height}
-          src={gitIcon.src} 
-          alt={gitIcon.name}>Github Repo
+          src={gitIcon.src}
+          loading="eager"
+          alt="Github logo">Github Repo
         </a>
         <a 
           class="bg-blue-300 text-black p-2 font-bold rounded-2xl inline-flex items-center gap-1"
@@ -38,8 +39,9 @@ const {title,img,description,repoURL,depoURL,gitIcon} = Astro.props
           class="size-5 m-1 rounded-4xl"
           width={webIcon.width}
           height={webIcon.height}
-          src={webIcon.src} 
-          alt={webIcon.name}>
+          src={webIcon.src}
+          loading="eager"
+          alt="Web logo">
           Deploy</a>
       </div>
     </div>
