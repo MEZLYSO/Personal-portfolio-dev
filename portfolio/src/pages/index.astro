@@ -1,20 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+//Img LOL
+import gitIcon from '../assets/github.svg'
+
 //Components
 import Banner from '../sections/Banner/Banner.astro'
 import Proyects from '../sections/Proyects/Proyects.astro'
 import Aboutme from '../sections/Aboutme/Aboutme.astro'
 import Skills from '../sections/Skills/Skills.astro'
+
+//Data 
+import data from '../content/data/personalInfo.json'
+const {name,occupation} = data
 ---
 
 <Layout>
   <main class="flex justify-center items-center p-10">
     <div class="flex-col w-200 space-y-10">
-      <Banner/>
+      <Banner name={name} occupation={occupation}/>
       <Skills/>
-      <Proyects/>
-      <Aboutme />
+      <Proyects gitIcon={gitIcon}/>
+      <Aboutme  gitIcon={gitIcon}/>
     </div>
   </main>
 </Layout>

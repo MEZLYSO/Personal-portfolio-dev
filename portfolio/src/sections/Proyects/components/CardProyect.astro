@@ -1,8 +1,6 @@
 ---
-import gitIcon from '../../../assets/github.svg'
 import webIcon from '../../../assets/web.svg'
-const {title,img,description,repoURL,depoURL} = Astro.props 
-
+const {title,img,description,repoURL,depoURL,gitIcon} = Astro.props 
 ---
 <div 
   class="border-1 border-white/10 rounded p-5 shadow-black shadow-lg">
@@ -35,7 +33,7 @@ const {title,img,description,repoURL,depoURL} = Astro.props
         </a>
         <a 
           class="bg-blue-300 text-black p-2 font-bold rounded-2xl inline-flex items-center gap-1"
-      href="">
+          href={depoURL}>
         <img
           class="size-5 m-1 rounded-4xl"
           width={webIcon.width}

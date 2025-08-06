@@ -1,6 +1,12 @@
 ---
+// Components
 import TitleSection from '../../components/TitleSection.astro'
 
+//Img 
+
+const {gitIcon} = Astro.props
+
+// Data 
 import { getCollection } from 'astro:content';
 const proyects = await getCollection('proyects')
 import CardProyect from './components/CardProyect.astro'
@@ -28,6 +34,7 @@ interface proyectItem {
           repoURL={repoURL}
           description={description}
           depoURL={depoURL}
+          gitIcon={gitIcon}
         />
         )
       })
