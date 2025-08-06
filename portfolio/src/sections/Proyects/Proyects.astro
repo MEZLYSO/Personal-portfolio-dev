@@ -16,6 +16,7 @@ interface proyectItem {
     title:string,
     repoURL:string,
     depoURL:string,
+    img:string,
     description:string
   }
 }
@@ -27,13 +28,14 @@ interface proyectItem {
       {
       proyects.map((item:proyectItem)=>{
         const {data} = item
-        const {title,repoURL,depoURL,description}=data
+        const {title,repoURL,depoURL,img,description}=data
         return(
         <CardProyect 
           title={title}
           repoURL={repoURL}
           description={description}
           depoURL={depoURL}
+          img={img}
           gitIcon={gitIcon}
         />
         )

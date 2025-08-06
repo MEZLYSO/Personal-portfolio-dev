@@ -6,6 +6,7 @@ const proyects = defineCollection({
     title: z.string(),
     repoURL: z.string(),
     depoURL: z.string(),
+    img: z.string(),
     description: z.string()
   })
 })

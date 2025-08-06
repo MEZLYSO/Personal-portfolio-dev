@@ -9,12 +9,11 @@ const {title,img,description,repoURL,depoURL,gitIcon} = Astro.props
       <!--   src={img}  -->
       <!--   alt=""/> -->
     <!--  <div> -->
-    <!-- <img  -->
-    <!--   src={react.src}  -->
-    <!--   width={react.width} -->
-    <!--   height={react.height} -->
-    <!--   alt={react.name}> -->
-    <!--   </div>  -->
+    <img
+      class="w-auto h-40"
+      src=`https://raw.githubusercontent.com/MEZLYSO/${repoURL}/refs/heads/main/${img}`
+      loading="lazy"
+      alt={title}> 
       <h3
         class="text-white font-bold text-xl">{title}</h3>
       <p
