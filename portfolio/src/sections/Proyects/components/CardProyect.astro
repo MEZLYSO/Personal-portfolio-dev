@@ -3,23 +3,26 @@ import webIcon from '../../../assets/web.svg'
 const {title,img,description,repoURL,depoURL,gitIcon} = Astro.props 
 ---
 <div 
-  class="border-1 border-white/10 rounded p-5 shadow-black shadow-lg">
+  class="border-1 border-white/10 rounded p-5 shadow-black shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
       <!-- <Image  -->
       <!--   class="max-h-50 w-auto" -->
       <!--   src={img}  -->
       <!--   alt=""/> -->
     <!--  <div> -->
-    <img
-      class="w-auto h-40"
-      src=`https://raw.githubusercontent.com/MEZLYSO/${repoURL}/refs/heads/main/${img}`
-      loading="lazy"
-      alt={title}> 
+    <div class="w-full h-40 overflow-hidden">
+      <img
+        class="w-full h-full object-cover"
+        src=`https://raw.githubusercontent.com/MEZLYSO/${repoURL}/refs/heads/main/${img}`
+        loading="lazy"
+        alt={title}> 
+    </div>
+    <div>
       <h3
         class="text-white font-bold text-xl">{title}</h3>
       <p
         class="font-extralight h-20 w-full overflow-hidden">{description}</p>
       <div
-        class="flex justify-start items-center gap-5">
+    class="flex justify-start items-center gap-5 text-[10px] sm:text-sm w-full">
         <a
           class="bg-black text-white p-2 font-bold rounded-2xl inline-flex items-center gap-1"
           href={`https://github.com/MEZLYSO/${repoURL}`}>
@@ -44,4 +47,4 @@ const {title,img,description,repoURL,depoURL,gitIcon} = Astro.props
           Deploy</a>
       </div>
     </div>
-
+</div>

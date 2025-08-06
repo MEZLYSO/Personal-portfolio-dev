@@ -9,6 +9,8 @@ import Banner from '../sections/Banner/Banner.astro'
 import Proyects from '../sections/Proyects/Proyects.astro'
 import Aboutme from '../sections/Aboutme/Aboutme.astro'
 import Skills from '../sections/Skills/Skills.astro'
+import Contact from '../sections/Contact/Contact.astro'
+import Footer from '../sections/Footer/Footer.astro'
 
 //Data 
 import data from '../content/data/personalInfo.json'
@@ -21,7 +23,9 @@ const {name,occupation} = data
       <Banner name={name} occupation={occupation}/>
       <Skills/>
       <Proyects gitIcon={gitIcon}/>
-      <Aboutme  gitIcon={gitIcon}/>
+      <Aboutme />
+      <Contact gitIcon={gitIcon}/>
     </div>
   </main>
+<Footer/>
 </Layout>
